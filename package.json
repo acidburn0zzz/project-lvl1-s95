@@ -1,0 +1,19 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "console games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iskaldvind/project-lvl1-s95.git"
+  },
+  "author": "iskaldvind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iskaldvind/project-lvl1-s95/issues"
+  },
+  "homepage": "https://github.com/iskaldvind/project-lvl1-s95#readme"
+}
