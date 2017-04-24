@@ -1,10 +1,15 @@
 {
-  "name": "brain-games",
+  "name": "brain-games-215376",
   "version": "0.0.1",
   "description": "",
   "main": "usr/bin/brain-games.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
   "scripts": {
-    "babel-node": "babel-node"
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
