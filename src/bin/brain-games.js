@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getName from '..'
+import getName from '../';
 
 getName();
 
