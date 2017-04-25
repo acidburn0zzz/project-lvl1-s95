@@ -1,6 +1,6 @@
 {
   "name": "brain-games-215376",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "",
   "main": "dist/index.js",
   "bin": {
@@ -21,6 +21,9 @@
     "url": "https://github.com/iskaldvind/project-lvl1-s95/issues"
   },
   "homepage": "https://github.com/iskaldvind/project-lvl1-s95#readme",
+  "dependencies": {
+    "readline-sync": "*"
+  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
