@@ -1,26 +1,35 @@
 import readlineSync from 'readline-sync';
+import brainEvenGame from './games/brain-even-game';
+import brainCalcGame from './games/brain-calc-game';
 
 export const getName = (descriptionMsg = '') => {
   console.log(`\nWelcome to the Brain Games!\n${descriptionMsg}`);
   const name = readlineSync.question('May I have your name? ');
-  return { name, msg: `Hello, ${name}!` };
+  return { name, msg: `Hello, ${name}!\n` };
 };
 
-export const brainEven = () => {
-  const { name, msg } = getName('Answer "yes" if number even otherwise answer "no".\n');
-  console.log(`${msg}\n`);
-  const askEven = (tries) => {
+const gameFlow = (gameFunction) => {
+  const { message } = gameFunction();
+  const { name, msg } = getName(message);
+  console.log(msg);
+  const gameIter = (tries) => {
     if (tries === 0) {
       return `Congratulations, ${name}!`;
     }
-    const num = Math.floor((Math.random() * 99) + 1);
-    console.log(`Question: ${num}`);
-    const answer = readlineSync.question('Your answer: ');
-    if ((answer === 'yes' && num % 2 === 0) || (answer === 'no' && num % 2 !== 0)) {
-      console.log('Correnct!');
-      return askEven(tries - 1);
+    const { question, correctAnswer } = gameFunction();
+    console.log(`Question: ${question}`);
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (playerAnswer === correctAnswer.toString()) {
+      console.log('Correct!');
+      return gameIter(tries - 1);
     }
-    return `'${answer}' is wrong answer ;(. Corrent answer was '${num % 2 === 0 ? 'yes' : 'no'}'.\nLet's try again, ${name}!`;
+    return `'${playerAnswer}' is wrong answer ;(. Corrent answer was '${correctAnswer}'.\nLet's try again, ${name}!`;
   };
-  return askEven(3);
+  return gameIter(3);
 };
+
+
+export const brainEven = () => gameFlow(brainEvenGame);
+
+export const brainCalc = () => gameFlow(brainCalcGame);
+
