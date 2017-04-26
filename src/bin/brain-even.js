@@ -1,3 +1,4 @@
-/**
- * Created by yveter on 25.04.17.
- */
+#!/usr/bin/env node
+import { brainEven } from '../';
+
+console.log(brainEven());
