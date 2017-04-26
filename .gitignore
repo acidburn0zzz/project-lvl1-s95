@@ -2,3 +2,4 @@
 dist
 *.log
 .idea
+.DS_Store
