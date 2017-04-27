@@ -1,6 +1,4 @@
 import readlineSync from 'readline-sync';
-import brainEvenGame from './games/even';
-import brainCalcGame from './games/calc';
 
 const numberOfRightAnswersToWin = 3;
 
@@ -13,7 +11,7 @@ export const sayHello = () => {
 export const gameFlow = (gameFunction) => {
   console.log(`\nWelcome to the Brain Games!\n${gameFunction.description}\n`);
   const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}\n!`);
+  console.log(`Hello, ${playerName}!\n`);
   const gameIter = (rightAnswersToWinLeft) => {
     if (rightAnswersToWinLeft === 0) {
       return `Congratulations, ${playerName}!`;
@@ -29,6 +27,3 @@ export const gameFlow = (gameFunction) => {
   };
   console.log(gameIter(numberOfRightAnswersToWin));
 };
-
-export { brainEvenGame, brainCalcGame };
-
