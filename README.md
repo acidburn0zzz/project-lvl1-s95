@@ -6,6 +6,4 @@
 [![Build Status](https://travis-ci.org/iskaldvind/project-lvl1-s95.svg?branch=master)](https://travis-ci.org/iskaldvind/project-lvl1-s95) 
 
 # Install:  
-npm install -g brain-games-215376  
-
-[![asciicast](https://asciinema.org/a/843449036fz820srl00xu886t.png)](https://asciinema.org/a/843449036fz820srl00xu886t)
+npm install -g brain-games-215376

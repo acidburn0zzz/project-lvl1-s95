@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { getName } from '../';
+import { brainHelloGame } from '../';
 
-console.log(getName().msg);
+brainHelloGame();
