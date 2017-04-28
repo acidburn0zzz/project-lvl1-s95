@@ -1,13 +1,14 @@
 {
   "name": "brain-games-215376",
-  "version": "0.0.43",
+  "version": "0.0.45",
   "description": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-balance": "dist/bin/brain-balance.js"
+    "brain-balance": "dist/bin/brain-balance.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "scripts": {
     "babel-node": "babel-node",
