@@ -4,13 +4,14 @@ const brainBalanceGame = () => {
   const gameFunction = () => {
     const number = `${Math.floor((Math.random() * 9999) + 1)}`;
     const question = number;
-    const summOfDigits = [...number].reduce((acc, digit) => acc + Number(digit), 0);
-    const numberAverageDigit = summOfDigits / number.length;
-    if (summOfDigits % number.length === 0) {
-      const correctAnswer = new Array(number.length + 1).join(`${numberAverageDigit}`);
+    const numberOfDigits = number.length;
+    const sumOfDigits = [...number].reduce((acc, digit) => acc + Number(digit), 0);
+    const numberAverageDigit = sumOfDigits / numberOfDigits;
+    if (sumOfDigits % numberOfDigits === 0) {
+      const correctAnswer = new Array(numberOfDigits + 1).join(`${numberAverageDigit}`);
       return { question, correctAnswer };
     }
-    const approximationIter = (balancedNumber, digitsLeft) => {
+    const approximationIter = (digitsLeft, balancedNumber = '') => {
       if (digitsLeft === 0) {
         return [...balancedNumber].sort().join('');
       }
@@ -21,9 +22,9 @@ const brainBalanceGame = () => {
       const nextDigit = currentAverage < numberAverageDigit ?
           Math.floor(numberAverageDigit) + 1 :
           Math.floor(numberAverageDigit);
-      return approximationIter(`${balancedNumber}${nextDigit}`, digitsLeft - 1);
+      return approximationIter(digitsLeft - 1, `${balancedNumber}${nextDigit}`);
     };
-    const correctAnswer = approximationIter('', number.length, numberAverageDigit);
+    const correctAnswer = approximationIter(numberOfDigits);
     return { question, correctAnswer };
   };
   gameFunction.description = 'Balance the given number.';
