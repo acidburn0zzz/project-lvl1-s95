@@ -2,14 +2,14 @@ import gameFlow from '../';
 
 const description = 'Answer "yes" if number is prime otherwise answer "no".';
 
-const isPrime = (number, currentDivisor, maxPossibledivisor) => {
-  if (currentDivisor >= maxPossibledivisor) {
+const isPrime = (number, currentDivisor, maxPossibleDivisor) => {
+  if (currentDivisor === maxPossibleDivisor) {
     return true;
   }
   if (number % currentDivisor === 0) {
     return false;
   }
-  return isPrime(number, currentDivisor + 1, maxPossibledivisor);
+  return isPrime(number, currentDivisor + 1, maxPossibleDivisor);
 };
 
 const genQuestionAndSolution = () => {
