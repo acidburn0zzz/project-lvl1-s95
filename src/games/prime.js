@@ -7,15 +7,15 @@ const primeIter = (number, divisor, maxPossibledivisor) => {
   if (divisor >= maxPossibledivisor) {
     return 'yes';
   }
-  if (
-    (number % divisor) *
-    (number % (divisor + 4)) *
-    (number % (divisor + 6)) *
-    (number % (divisor + 10)) *
-    (number % (divisor + 12)) *
-    (number % (divisor + 16)) *
-    (number % (divisor + 22)) *
-    (number % (divisor + 24)) === 0) {
+  if (!(
+    (number % divisor) &&
+    (number % (divisor + 4)) &&
+    (number % (divisor + 6)) &&
+    (number % (divisor + 10)) &&
+    (number % (divisor + 12)) &&
+    (number % (divisor + 16)) &&
+    (number % (divisor + 22)) &&
+    (number % (divisor + 24)))) {
     return 'no';
   }
   return primeIter(number, divisor + 30, maxPossibledivisor);
